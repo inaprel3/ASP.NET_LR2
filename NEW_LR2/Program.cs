@@ -24,15 +24,15 @@ app.Configuration.Bind("Apple", apple);
 app.Configuration.Bind("Person", person);
 
 app.Run(async (context) => {
-    await context.Response.WriteAsync($"Кількість працівників у компаніях:\n");
+    await context.Response.WriteAsync($"РљС–Р»СЊРєС–СЃС‚СЊ РїСЂР°С†С–РІРЅРёРєС–РІ Сѓ РєРѕРјРїР°РЅС–СЏС…:\n");
     await context.Response.WriteAsync($"{microsoft.name} - {microsoft.workers}\n");
     await context.Response.WriteAsync($"{google.name} - {google.workers}\n");
     await context.Response.WriteAsync($"{apple.name} - {apple.workers}\n");
 
     string companyWithMaxWorkers = Company.GetCompanyWithMaxWorkers(microsoft, apple, google);
-    await context.Response.WriteAsync($"Найбільша кількість працівників у компанії: {companyWithMaxWorkers}\n");
+    await context.Response.WriteAsync($"РќР°Р№Р±С–Р»СЊС€Р° РєС–Р»СЊРєС–СЃС‚СЊ РїСЂР°С†С–РІРЅРёРєС–РІ Сѓ РєРѕРјРїР°РЅС–С—: {companyWithMaxWorkers}\n");
 
-    await context.Response.WriteAsync($"\nОсобиста інформація:\nІм'я: {person.name}\nВік: {person.age}\nМісто: {person.city}");
+    await context.Response.WriteAsync($"\nРћСЃРѕР±РёСЃС‚Р° С–РЅС„РѕСЂРјР°С†С–СЏ:\nР†Рј'СЏ: {person.name}\nР’С–Рє: {person.age}\nРњС–СЃС‚Рѕ: {person.city}");
 });
 
 app.Run();
